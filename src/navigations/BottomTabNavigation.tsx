@@ -1,17 +1,17 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { Feather } from '@expo/victor-icons'
-import Home from '../screens/Home'
+import { Feather } from '@expo/vector-icons'
 import Search from '../screens/Search'
 import Favorite from '../screens/Favorite'
+import HomeStackNavigation from './HomeStackNavigation'
 
 const Tab = createBottomTabNavigator()
 
 const BottomTabNavigator = (): JSX.Element => (
     <Tab.Navigator>
         <Tab.Screen
-            name="Home"
-            component={Home}
+            name="HomeStack"
+            component={HomeStackNavigation}
             options={{
                 tabBarIcon: ({ color }) => (
                     <Feather name="home" size={28} color={color} />
@@ -21,7 +21,7 @@ const BottomTabNavigator = (): JSX.Element => (
         />
         <Tab.Screen
             name="Search"
-            component={Home}
+            component={Search}
             options={{
                 tabBarIcon: ({ color }) => (
                     <Feather name="search" size={28} color={color} />
@@ -31,7 +31,7 @@ const BottomTabNavigator = (): JSX.Element => (
         />
         <Tab.Screen
             name="Favorite"
-            component={Home}
+            component={Favorite}
             options={{
                 tabBarIcon: ({ color }) => (
                     <Feather name="heart" size={28} color={color} />
