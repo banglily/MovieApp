@@ -4,7 +4,7 @@ import type { MovieListProps, Movie } from '../../types/app'
 import { API_ACCESS_TOKEN } from '@env'
 import MovieItem from './MovieItem'
 
-const coverImageSize = {
+export const coverImageSize = {
     backdrop: {
         width: 280,
         height: 160,
@@ -37,11 +37,9 @@ const MovieList = ({ title, path, coverType }: MovieListProps) => {
         setMovies(response.results)
       })
       .catch((errorResponse) => {
-        console.log(errorResponse)
+        console.error(errorResponse)
       })
   }
-
-  console.log(movies)
 
   return (
     <View>
